@@ -8,13 +8,16 @@ import utilStyles from '../styles/utils.module.scss';
 
 import { getSortedPostsData } from '../lib/posts';
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+import { GetStaticProps } from 'next'
+
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedPostsData()
   return {
     props: {
-      allPostsData,
-    },
-  };
+      allPostsData
+    }
+  }
 }
 
 // When fetching data that has regular updates, we can't use static site generation <-- build time, but instead need to use server side rendering <-- request time
@@ -28,7 +31,15 @@ export async function getServerSideProps(context) {
 }
 */
 
-export default function Home({ allPostsData }) {
+export default function Home({
+  allPostsData
+}: {
+  allPostsData: {
+    date: string
+    title: string
+    id: string
+  }[]
+}) {
   return (
     <Layout home>
       {/* Keep the existing code here */}
