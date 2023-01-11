@@ -42,6 +42,16 @@ export default function Home({
 }) {
   return (
     <Layout home>
+      <Head>
+        <title>Blog start</title>
+        {
+          /*
+          <meta name="robots" content="noindex,nofollow" />
+          <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
+          <meta name="google" content="notranslate" key="notranslate" />
+          */
+        }
+      </Head>
       {/* Keep the existing code here */}
 
       {/* Add this <section> tag below the existing <section> tag */}
