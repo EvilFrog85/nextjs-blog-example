@@ -29,6 +29,8 @@ export default function Post({
 }: {
     postData: {
         title: string
+        description: string
+        image: string
         date: string
         contentHtml: string
     }
@@ -37,6 +39,10 @@ export default function Post({
         <Layout>
             <Head>
                 <title>{postData.title}</title>
+                <meta name="description" content={postData.description} key="desc" />
+                <meta property="og:title" content={postData.title} />
+                <meta name="og:description" content={postData.description} />
+                <meta name="og:image" content={postData.image ? postData.image : 'https://siteurl.example/images/default-social-media-share-image.jpg' } />
             </Head>
             <article>
                 <h1 className={utilStyles.headingXl}>{postData.title}</h1>

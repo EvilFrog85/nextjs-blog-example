@@ -1,5 +1,6 @@
 ---
 title: 'Two Forms of Pre-rendering'
+description: 'This posts presents the two types of Pre-rendering in NextJS'
 date: '2020-01-01'
 ---
 
